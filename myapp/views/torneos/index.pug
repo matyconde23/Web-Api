@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    a(href='/torneos/create') nuevo torneo
+    table.table 
+        thead 
+            tr 
+                th(scope='col') #
+                th(scope='col') nombre 
+                th(scope='col') lugar 
+                th(scope='col') categoria
+                th(scope='col') 
+        tbody 
+          each torneo in torneos 
+                tr
+                    th(scope='row')
+                        =  torneo.id
+                    td= torneo.nombre 
+                    td= torneo.lugar 
+                    td= torneo.categoria
+                    td 
+                        form.inline(method='post' action='torneos/' + torneo.id + '/delete')
+                        input(type="hidden" name='id' value= torneo.id)
+                        button.link-button(type='submit' name='submit_param' value='submit_value' class='btn')
+                            = 'Eliminar'

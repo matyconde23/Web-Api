@@ -1,0 +1,37 @@
+extends ../layout
+block content 
+    a(href='/torneos') | Volver 
+
+
+    br
+    br
+    br
+
+    h1 nuevo torneo 
+
+    br
+    br
+
+
+
+    form(action='/torneos/create', method="post")
+        label(for="id") ID:
+        input#id(type="text", name="id")
+        br
+        label(for="nombre") Nombre:
+        input#nombre(type="text", name="nombre")
+        br
+        label(for="lugar") Ubicación:
+        input#lugar(type="text", name="lugar")
+        br
+        label(for="categoria") Categoría:
+        select#categoria(name="categoria")
+            option(value="categoria1") Categoría 1
+            option(value="categoria2") Categoría 2
+            option(value="categoria3") Categoría 3
+            option(value="categoria4") Categoría 4
+            option(value="categoria5") Categoría 5
+            option(value="categoria6") Categoría 6
+        br
+        br
+        input.btn(type="submit" value='OK')
