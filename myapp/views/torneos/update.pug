@@ -1,0 +1,37 @@
+extends ../layout
+block content 
+    a(href='/torneos') | Volver 
+
+
+    br
+    br
+    br
+
+    h1 actualizando torneo
+
+    br
+    br
+
+
+
+    form(action=`/torneos/${torneo.id}/update`, method="post")
+        label(for="id") ID:
+        input#id(type="text", name="id" value=torneo.id)
+        br
+        label(for="nombre") Nombre:
+        input#nombre(type="text", name="nombre" value=torneo.nombre)
+        br
+        label(for="lugar") Ubicación:
+        input#lugar(type="text", name="lugar" value=torneo.lugar)
+        br
+        label(for="categoria") Categoría:
+        select#categoria(name="categoria" value=torneo.categoria)
+            option(value="categoria1") Categoría 1
+            option(value="categoria2") Categoría 2
+            option(value="categoria3") Categoría 3
+            option(value="categoria4") Categoría 4
+            option(value="categoria5") Categoría 5
+            option(value="categoria6") Categoría 6
+        br
+        br
+        input.btn(type="submit" value='OK')

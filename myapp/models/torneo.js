@@ -17,7 +17,7 @@ Torneo.add = function(aTorneo){
 }
 
 Torneo.findById = function(aTorneoId){
-    var aTorneo = Torneo.allTorneos.find(x => x.if == aTorneoId);
+    var aTorneo = Torneo.allTorneos.find(x => x.id == aTorneoId);
     if(aTorneo)
         return aTorneo;
     else

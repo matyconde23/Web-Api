@@ -19,7 +19,9 @@ block content
                     td= torneo.lugar 
                     td= torneo.categoria
                     td 
-                        form.inline(method='post' action='torneos/' + torneo.id + '/delete')
-                        input(type="hidden" name='id' value= torneo.id)
-                        button.link-button(type='submit' name='submit_param' value='submit_value' class='btn')
-                            = 'Eliminar'
+                        a(href='torneos/' + torneo.id + '/update') editar
+                    td 
+                        form.inline(method='POST', action='/torneo/' + torneo.id + '/delete')
+                         input(type='hidden' name='id' value=torneo.id)
+                        button(type='submit' class='btn' onclick='return confirm("¿Estás seguro de que deseas eliminar este torneo?")')
+                        | Eliminar
